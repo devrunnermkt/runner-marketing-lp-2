@@ -75,7 +75,7 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-semibold transition-all duration-300 px-6 py-3 rounded-xl"
+                  className="text-sm font-semibold transition-all duration-300 px-10 py-3 rounded-xl"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = isScrolled ? 'rgba(30, 41, 59, 0.15)' : 'rgba(255, 255, 255, 0.15)';
                     e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
