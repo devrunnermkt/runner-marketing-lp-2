@@ -74,7 +74,7 @@ export const siteConfig = {
         "Presença digital sofisticada, identidade profissional e comunicação focada em performance.",
       foto: "/projetos/justojulia.jpg",
       instagram: "https://www.instagram.com/justojulia/",
-      behance: "https://www.behance.net/gallery/251238713/Yan-Campos-Tricologia",
+      behance: "https://www.behance.net/gallery/251238183/Julia-Justo-Medicina-Esportiva",
     },
     {
       nome: "Dr. Frederico Pessoa",
