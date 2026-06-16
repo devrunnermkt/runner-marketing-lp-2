@@ -29,9 +29,9 @@ export const siteConfig = {
   whatsappMensagem: WHATSAPP_MENSAGEM,
   whatsappUrl: buildWhatsapp(),
   whatsappDisplay: "+55 11 99718-8406",
-  email: "[EMAIL]",
-  instagram: "@[INSTAGRAM]",
-  instagramUrl: "https://instagram.com/[INSTAGRAM]",
+  email: "runnermarketing01@gmail.com",
+  instagram: "@runnermkt",
+  instagramUrl: "https://instagram.com/runnermkt",
   linkedinUrl: "[LINKEDIN_URL]",
   endpointForm: "[ENDPOINT_FORM]", // URL do backend ou deixar vazio para abrir WhatsApp
   prazoDias: "24", // ex: 24
