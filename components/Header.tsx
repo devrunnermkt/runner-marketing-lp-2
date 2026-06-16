@@ -20,7 +20,7 @@ export default function Header() {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -75,7 +75,15 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-semibold transition-all duration-300"
+                  className="text-sm font-semibold transition-all duration-300 px-3 py-2 rounded-lg"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = isScrolled ? 'rgba(30, 41, 59, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
                   style={{
                     color: isScrolled ? '#1e293b' : 'rgba(255, 255, 255, 0.8)',
                     textShadow: isAtTop ? '0 1px 2px rgba(0, 0, 0, 0.3)' : 'none'
@@ -133,7 +141,7 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className="block text-base font-semibold py-3 px-3 rounded-md transition-all duration-300"
                   style={{
-                    color: isScrolled ? '#1e293b' : '#1e293b',
+                    color: '#ffffff',
                     backgroundColor: isScrolled ? 'rgba(100, 116, 139, 0.08)' : 'transparent'
                   }}
                 >
