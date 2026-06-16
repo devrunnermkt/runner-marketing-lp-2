@@ -67,8 +67,11 @@ export const especialidades: Especialidade[] = [
     ],
     icone: (
       <svg {...svg}>
-        <circle pathLength={1} cx="12" cy="12" r="4" />
-        <path pathLength={1} d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4" />
+        <path
+          pathLength={1}
+          d="M12 3l1.6 5.2a3 3 0 0 0 1.9 1.9L20.7 12l-5.2 1.6a3 3 0 0 0-1.9 1.9L12 20.7l-1.6-5.2a3 3 0 0 0-1.9-1.9L3.3 12l5.2-1.6a3 3 0 0 0 1.9-1.9z"
+        />
+        <path pathLength={1} d="M19 4.5v3M20.5 6h-3M5 16.5v2M6 17.5H4" />
       </svg>
     ),
   },
@@ -109,8 +112,11 @@ export const especialidades: Especialidade[] = [
     ],
     icone: (
       <svg {...svg}>
-        <path pathLength={1} d="M15.5 3A6.5 6.5 0 0 0 9 9.5c0 1-1 2-2 3.5h2v3a3 3 0 0 0 3 3h1" />
-        <path pathLength={1} d="M14 11c1-1 3-1 3 1s-3 3-3 1" />
+        <circle pathLength={1} cx="12" cy="12" r="8.5" />
+        <path
+          pathLength={1}
+          d="M12 16.2s-3.6-2.2-3.6-4.7a1.95 1.95 0 0 1 3.6-1.05 1.95 1.95 0 0 1 3.6 1.05c0 2.5-3.6 4.7-3.6 4.7z"
+        />
       </svg>
     ),
   },
@@ -129,7 +135,10 @@ export const especialidades: Especialidade[] = [
     ],
     icone: (
       <svg {...svg}>
-        <path pathLength={1} d="M7 3c-2 0-3 2-3 5 0 4 1 13 3 13 1.5 0 1-5 3-5s1.5 5 3 5c2 0 3-9 3-13 0-3-1-5-3-5-1.5 0-2 1-3 1s-1.5-1-3-1z" />
+        <path
+          pathLength={1}
+          d="M6.5 3.5C4.6 3.5 3.5 5.2 3.5 7.6c0 1.5.3 3.2.8 5 .6 2.2 1.4 4.5 2.3 5.9.3.5.7.8 1.2.8.9 0 1.1-1.2 1.2-2.6.1-1.4.2-2.8 1-2.8s.9 1.4 1 2.8c.1 1.4.3 2.6 1.2 2.6.5 0 .9-.3 1.2-.8.9-1.4 1.7-3.7 2.3-5.9.5-1.8.8-3.5.8-5 0-2.4-1.1-4.1-3-4.1-1.3 0-2 .7-2.7.7s-1.4-.7-2.8-.7z"
+        />
       </svg>
     ),
   },
@@ -148,8 +157,8 @@ export const especialidades: Especialidade[] = [
     ],
     icone: (
       <svg {...svg}>
-        <circle pathLength={1} cx="12" cy="8" r="5" />
-        <path pathLength={1} d="M12 13v8M9 18h6" />
+        <circle pathLength={1} cx="12" cy="8.5" r="5.5" />
+        <path pathLength={1} d="M12 14v7M8.5 18h7" />
       </svg>
     ),
   },
@@ -210,8 +219,15 @@ export const especialidades: Especialidade[] = [
     ],
     icone: (
       <svg {...svg}>
-        <path pathLength={1} d="M12 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 1 3 3 0 0 0 3-1 3 3 0 0 0 2-5 3 3 0 0 0-2-5 3 3 0 0 0-3-3z" />
-        <path pathLength={1} d="M12 4v14" />
+        <path
+          pathLength={1}
+          d="M12 5.5a3 3 0 0 0-5.7-1.2A3 3 0 0 0 4 9a3 3 0 0 0 1 5.6A2.6 2.6 0 0 0 8.5 18a2.6 2.6 0 0 0 3.5-.6z"
+        />
+        <path
+          pathLength={1}
+          d="M12 5.5a3 3 0 0 1 5.7-1.2A3 3 0 0 1 20 9a3 3 0 0 1-1 5.6A2.6 2.6 0 0 1 15.5 18a2.6 2.6 0 0 1-3.5-.6z"
+        />
+        <path pathLength={1} d="M12 5.5v12" />
       </svg>
     ),
   },
@@ -230,8 +246,11 @@ export const especialidades: Especialidade[] = [
     ],
     icone: (
       <svg {...svg}>
-        <path pathLength={1} d="M12 3l7 4v8l-7 4-7-4V7z" />
-        <circle pathLength={1} cx="12" cy="11" r="2.5" />
+        <circle pathLength={1} cx="12" cy="12" r="2.5" />
+        <circle pathLength={1} cx="12" cy="4.5" r="1.8" />
+        <circle pathLength={1} cx="5.5" cy="17" r="1.8" />
+        <circle pathLength={1} cx="18.5" cy="17" r="1.8" />
+        <path pathLength={1} d="M12 9.5V6.3M10 13.6l-3 2.2M14 13.6l3 2.2" />
       </svg>
     ),
   },

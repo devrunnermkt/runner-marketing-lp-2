@@ -60,6 +60,7 @@ export const siteConfig = {
     { valor: "120+", label: "Clínicas e profissionais atendidos" },
     { valor: "8,4x", label: "Retorno médio sobre o investimento em mídia" },
     { valor: "97%", label: "Dos clientes seguem com a Runner após 6 meses" },
+    { valor: "18 meses", label: "Tempo médio de parceria do cliente com a Runner" },
   ],
 
   // ── Projetos Runner (portfólio / cases) ──────────────────
