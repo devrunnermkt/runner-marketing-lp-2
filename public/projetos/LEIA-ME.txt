@@ -1,0 +1,2 @@
+﻿Coloque aqui as imagens dos projetos referenciadas em app/siteConfig.ts (campo 'imagem').
+Ex: /projetos/clinica-x.jpg . Sem imagem, o card usa um gradiente da marca.

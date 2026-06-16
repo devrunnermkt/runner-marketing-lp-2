@@ -1,0 +1,6 @@
+﻿Coloque aqui as fotos do time referenciadas em app/siteConfig.ts:
+- flavio.jpg  (Flavio Jr.)
+- gabriel.jpg (Gabriel Rubney)
+
+Formato recomendado: retrato 4:5 (ex: 800x1000px), JPG otimizado.
+Enquanto a foto nao existir, o card mostra um avatar placeholder.

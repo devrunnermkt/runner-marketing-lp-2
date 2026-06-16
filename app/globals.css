@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-sora);
+}
+
+/* ============================================================
+   Identidade visual Runner Marketing
+   Cores extraídas da logo oficial:
+   ciano #05bbcd · #4edde8 · #93eaf0 · azul-petróleo #08263a
+   A paleta "teal" do Tailwind é sobrescrita pelo ciano da marca,
+   então todas as classes teal já usam a cor da Runner.
+   ============================================================ */
+@theme {
+  /* Azul-petróleo (seções escuras, títulos) */
+  --color-ink: #08263a;
+  --color-ink-light: #0f3a52;
+
+  /* Ciano da marca (sobrescreve teal) */
+  --color-teal-50: #e9f7f9;
+  --color-teal-100: #d2f2f5;
+  --color-teal-200: #93eaf0;
+  --color-teal-300: #4edde8;
+  --color-teal-400: #1ccad9;
+  --color-teal-500: #05bbcd;
+  --color-teal-600: #038ba0;
+  --color-teal-700: #026b7d;
+  --color-teal-800: #08596b;
+  --color-teal-900: #0a3b49;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sora), sans-serif;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+*:focus-visible {
+  outline: 2px solid #05bbcd;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Animações (Seletor de Especialidade + Avaliações)
+   Tudo respeita "prefers-reduced-motion".
+   ============================================================ */
+
+/* Ícone de especialidade preenche o contêiner */
+.esp-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Traço "se desenhando" */
+  @keyframes esp-draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .esp-icon-svg path,
+  .esp-icon-svg circle,
+  .esp-icon-svg line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: esp-draw 0.7s ease forwards;
+  }
+
+  /* Pulsação leve depois do desenho */
+  @keyframes esp-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  .esp-icon-wrap {
+    animation: esp-pulse 2.8s ease-in-out 0.8s infinite;
+  }
+
+  /* Fade suave na troca de conteúdo */
+  @keyframes esp-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .esp-fade {
+    animation: esp-fade-in 0.45s ease both;
+  }
+
+  /* Carrossel automático das avaliações (marquee) */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-track {
+    animation: marquee 40s linear infinite;
+  }
+  .marquee-pause:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Esconde a barra de rolagem do carrossel */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
