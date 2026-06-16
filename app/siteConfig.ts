@@ -74,6 +74,7 @@ export const siteConfig = {
         "Presença digital sofisticada, identidade profissional e comunicação focada em performance.",
       foto: "/projetos/justojulia.jpg",
       instagram: "https://www.instagram.com/justojulia/",
+      behance: "https://www.behance.net/gallery/251238713/Yan-Campos-Tricologia",
     },
     {
       nome: "Dr. Frederico Pessoa",
@@ -82,6 +83,7 @@ export const siteConfig = {
         "Gestão completa de redes sociais: conteúdo, roteiro e posicionamento de autoridade.",
       foto: "/projetos/dr.fredericopessoa.jpg",
       instagram: "https://www.instagram.com/dr.fredericopessoa/",
+      behance: "",
     },
     {
       nome: "Dr. Yan Campos",
@@ -90,6 +92,7 @@ export const siteConfig = {
         "Identidade visual, landing page, materiais de marca e conteúdo estratégico.",
       foto: "/projetos/dryancampos.jpg",
       instagram: "https://www.instagram.com/dryancampos/",
+      behance: "https://www.behance.net/gallery/251238713/Yan-Campos-Tricologia",
     },
   ],
 
