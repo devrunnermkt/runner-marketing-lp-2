@@ -95,8 +95,7 @@ export default function Header() {
                 color: '#ffffff',
                 boxShadow: isScrolled
                   ? '0 4px 12px rgba(13, 148, 136, 0.3)'
-                  : '0 2px 6px rgba(0, 0, 0, 0.2)',
-                focusRingColor: '#14b8a6'
+                  : '0 2px 6px rgba(0, 0, 0, 0.2)'
               }}
             >
               Diagnóstico gratuito
