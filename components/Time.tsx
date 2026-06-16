@@ -26,7 +26,7 @@ export default function Time() {
                 className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-shadow"
               >
                 {/* Foto / placeholder */}
-                <div className="relative aspect-[4/5] bg-teal-50 overflow-hidden">
+                <div className="relative aspect-[3/5] bg-teal-50 overflow-hidden">
                   <TeamPhoto
                     src={membro.foto}
                     alt={`${membro.nome}, ${membro.funcao} na Runner Marketing`}
