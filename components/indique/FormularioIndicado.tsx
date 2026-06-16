@@ -136,7 +136,9 @@ export default function FormularioIndicado({
             </div>
             <button
               type="submit"
-              className="w-full py-3.5 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#1ebe5b] transition-colors"
+              data-contato="form"
+              data-local="indique"
+              className="btn-contato w-full py-3.5 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#1ebe5b] transition-colors"
             >
               Enviar pelo WhatsApp
             </button>

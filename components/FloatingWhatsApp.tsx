@@ -15,7 +15,9 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1ebe5b] hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
+      data-contato="whatsapp"
+      data-local="flutuante"
+      className="btn-contato fixed bottom-5 right-5 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1ebe5b] hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
     >
       {/* Pulso */}
       <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-60 animate-ping" />

@@ -78,7 +78,9 @@ export default function PoliticaDeCookies() {
                 e-mail{" "}
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-teal-700 underline underline-offset-2"
+                  data-contato="email"
+                  data-local="politica-cookies"
+                  className="btn-contato text-teal-700 underline underline-offset-2"
                 >
                   {siteConfig.email}
                 </a>{" "}
@@ -87,7 +89,9 @@ export default function PoliticaDeCookies() {
                   href={siteConfig.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-teal-700 underline underline-offset-2"
+                  data-contato="whatsapp"
+                  data-local="politica-cookies"
+                  className="btn-contato text-teal-700 underline underline-offset-2"
                 >
                   WhatsApp
                 </a>

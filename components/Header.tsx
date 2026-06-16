@@ -97,7 +97,9 @@ export default function Header() {
             {/* CTA desktop */}
             <a
               href="/#contato"
-              className="hidden md:inline-flex items-center px-6 py-2.5 text-base font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              data-contato="cta"
+              data-local="header"
+              className="btn-contato hidden md:inline-flex items-center px-6 py-2.5 text-base font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
               style={{
                 backgroundColor: isScrolled ? '#0d9488' : 'rgba(13, 148, 136, 0.9)',
                 color: '#ffffff',
@@ -151,7 +153,9 @@ export default function Header() {
               <a
                 href="/#contato"
                 onClick={() => setMenuOpen(false)}
-                className="block w-full text-center mt-3 px-5 py-3 text-base font-semibold rounded-lg transition-all duration-300 text-white"
+                data-contato="cta"
+                data-local="header-mobile"
+                className="btn-contato block w-full text-center mt-3 px-5 py-3 text-base font-semibold rounded-lg transition-all duration-300 text-white"
                 style={{
                   backgroundColor: isScrolled ? '#0d9488' : '#0d9488',
                   boxShadow: isScrolled

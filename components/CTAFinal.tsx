@@ -96,7 +96,9 @@ export default function CTAFinal() {
 
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 py-4 bg-teal-600 text-white font-bold text-base sm:text-lg rounded-xl hover:bg-teal-700 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+            data-contato="form"
+            data-local="cta-final"
+            className="btn-contato w-full flex items-center justify-center gap-2 py-4 bg-teal-600 text-white font-bold text-base sm:text-lg rounded-xl hover:bg-teal-700 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
           >
             Quero meu diagnóstico gratuito
             <ArrowRight size={20} />

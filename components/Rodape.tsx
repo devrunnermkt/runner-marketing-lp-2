@@ -61,7 +61,9 @@ export default function Rodape() {
                   href={siteConfig.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm hover:text-teal-400 transition-colors"
+                  data-contato="whatsapp"
+                  data-local="rodape"
+                  className="btn-contato flex items-center gap-2 text-sm hover:text-teal-400 transition-colors"
                 >
                   <MessageCircle size={15} />
                   {siteConfig.whatsappDisplay}
@@ -70,7 +72,9 @@ export default function Rodape() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-2 text-sm hover:text-teal-400 transition-colors"
+                  data-contato="email"
+                  data-local="rodape"
+                  className="btn-contato flex items-center gap-2 text-sm hover:text-teal-400 transition-colors"
                 >
                   <Mail size={15} />
                   {siteConfig.email}

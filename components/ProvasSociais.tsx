@@ -162,7 +162,9 @@ export default function ProvasSociais() {
             href={siteConfig.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#25D366] hover:bg-[#1ebe5b] text-white text-base sm:text-lg font-semibold rounded-full shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
+            data-contato="whatsapp"
+            data-local="provas-sociais"
+            className="btn-contato inline-flex items-center gap-2.5 px-8 py-4 bg-[#25D366] hover:bg-[#1ebe5b] text-white text-base sm:text-lg font-semibold rounded-full shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
           >
             <WhatsAppIcon className="w-5 h-5" />
             Fale conosco pelo WhatsApp

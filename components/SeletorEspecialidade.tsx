@@ -126,7 +126,9 @@ export default function SeletorEspecialidade() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-white text-base sm:text-lg font-semibold shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-offset-2"
+                data-contato="whatsapp"
+                data-local="seletor-especialidade"
+                className="btn-contato inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-white text-base sm:text-lg font-semibold shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-offset-2"
                 style={{ backgroundColor: cor }}
               >
                 Quero esse resultado na minha agenda
