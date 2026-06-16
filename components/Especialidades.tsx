@@ -29,7 +29,7 @@ const servicos: Servico[] = [
     tags: "Google · Meta · Conversão",
     descricao:
       "Campanhas para atrair o paciente com real intenção de marcar, não o curioso atrás de preço. Mais agenda e menos faltas.",
-    imagem: "/servicos/gestao-de-trafego.jpeg",
+    imagem: "/servicos/gestao-de-trafego.webp",
   },
   {
     icon: Shield,
@@ -45,7 +45,7 @@ const servicos: Servico[] = [
     tags: "Roteiro · Gravação · Edição",
     descricao:
       "Roteiro, gravação orientada e edição para quem não tem tempo de virar produtor de vídeo. Você grava em minutos e a gente cuida do resto.",
-    imagem: "/servicos/roteiros.jpeg",
+    imagem: "/servicos/roteiros.webp",
   },
   {
     icon: Palette,
@@ -60,7 +60,7 @@ const servicos: Servico[] = [
     tags: "Sites · Landing pages · SEO",
     descricao:
       "Páginas rápidas, no padrão de quem busca um especialista e construídas para transformar a visita em consulta marcada.",
-    imagem: "/servicos/landing-page.jpeg",
+    imagem: "/servicos/landing-page.webp",
   },
   {
     icon: BarChart3,
@@ -68,7 +68,7 @@ const servicos: Servico[] = [
     tags: "Dados · Relatórios · ROI",
     descricao:
       "Você enxerga de onde vem cada paciente e o retorno de cada real investido. Decisão com dado, não com achismo.",
-    imagem: "/servicos/relatorio.jpg",
+    imagem: "/servicos/relatorio.webp",
   },
 ];
 
