@@ -20,6 +20,7 @@ type Servico = {
   tags: string;
   descricao: string;
   imagem?: string;
+  imagemPos?: string; // classe de object-position (ex: "object-top")
 };
 
 const servicos: Servico[] = [
@@ -53,6 +54,7 @@ const servicos: Servico[] = [
     tags: "Branding · Identidade · Posicionamento",
     descricao:
       "Uma marca de clínica que transmite confiança e diferencia você de quem só compete por preço.",
+    imagem: "/servicos/identidade-visual.webp",
   },
   {
     icon: Globe,
@@ -61,6 +63,7 @@ const servicos: Servico[] = [
     descricao:
       "Páginas rápidas, no padrão de quem busca um especialista e construídas para transformar a visita em consulta marcada.",
     imagem: "/servicos/landing-page.webp",
+    imagemPos: "object-top",
   },
   {
     icon: BarChart3,
@@ -160,7 +163,7 @@ export default function Especialidades() {
                         alt={s.titulo}
                         fill
                         sizes="(max-width: 640px) 288px, 320px"
-                        className="object-cover"
+                        className={`object-cover ${s.imagemPos ?? ""}`}
                       />
                     ) : (
                       <>
