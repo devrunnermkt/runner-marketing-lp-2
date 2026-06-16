@@ -141,7 +141,7 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className="block text-base font-semibold py-3 px-3 rounded-md transition-all duration-300"
                   style={{
-                    color: '#ffffff',
+                    color: isScrolled ? '#0d9488' : '#ffffff',
                     backgroundColor: isScrolled ? 'rgba(100, 116, 139, 0.08)' : 'transparent'
                   }}
                 >
