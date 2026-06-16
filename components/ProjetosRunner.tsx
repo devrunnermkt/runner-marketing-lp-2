@@ -29,7 +29,7 @@ export default function ProjetosRunner() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-4">
-            Projetos Runner
+            Alguns dos projetos Runner
           </h2>
           <p className="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto">
             Marcas de saúde que a gente ajudou a comunicar melhor. Toque para
@@ -45,7 +45,7 @@ export default function ProjetosRunner() {
                 href={proj.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative block aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 shadow-sm"
+                className="relative block aspect-[3/4] overflow-hidden rounded-2xl bg-slate-200 shadow-sm"
               >
                 <Image
                   src={proj.foto}
