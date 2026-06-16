@@ -50,8 +50,9 @@ export default function Header() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <button
+              type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center group cursor-pointer"
+              className="flex items-center group cursor-pointer border-none bg-none p-0"
               aria-label="Runner Marketing, voltar ao topo"
             >
               <Image
