@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   TrendingUp,
   Shield,
@@ -18,6 +19,7 @@ type Servico = {
   titulo: string;
   tags: string;
   descricao: string;
+  imagem?: string;
 };
 
 const servicos: Servico[] = [
@@ -27,6 +29,7 @@ const servicos: Servico[] = [
     tags: "Google · Meta · Conversão",
     descricao:
       "Campanhas para atrair o paciente com real intenção de marcar, não o curioso atrás de preço. Mais agenda e menos faltas.",
+    imagem: "/servicos/gestao-de-trafego.jpeg",
   },
   {
     icon: Shield,
@@ -34,6 +37,7 @@ const servicos: Servico[] = [
     tags: "Instagram · CFM · Autoridade",
     descricao:
       "Conteúdo que constrói autoridade, com revisão de cada peça antes de publicar. Você cresce sem cruzar nenhuma linha da Resolução 2.336.",
+    imagem: "/servicos/cfm.webp",
   },
   {
     icon: Video,
@@ -41,6 +45,7 @@ const servicos: Servico[] = [
     tags: "Roteiro · Gravação · Edição",
     descricao:
       "Roteiro, gravação orientada e edição para quem não tem tempo de virar produtor de vídeo. Você grava em minutos e a gente cuida do resto.",
+    imagem: "/servicos/roteiros.jpeg",
   },
   {
     icon: Palette,
@@ -55,6 +60,7 @@ const servicos: Servico[] = [
     tags: "Sites · Landing pages · SEO",
     descricao:
       "Páginas rápidas, no padrão de quem busca um especialista e construídas para transformar a visita em consulta marcada.",
+    imagem: "/servicos/landing-page.jpeg",
   },
   {
     icon: BarChart3,
@@ -62,6 +68,7 @@ const servicos: Servico[] = [
     tags: "Dados · Relatórios · ROI",
     descricao:
       "Você enxerga de onde vem cada paciente e o retorno de cada real investido. Decisão com dado, não com achismo.",
+    imagem: "/servicos/relatorio.jpg",
   },
 ];
 
@@ -145,10 +152,22 @@ export default function Especialidades() {
                   ].join(" ")}
                   aria-hidden={!isActive}
                 >
-                  {/* Topo com gradiente da marca + ícone */}
+                  {/* Topo: imagem do serviço (ou gradiente + ícone como fallback) */}
                   <div className="relative h-40 sm:h-44 bg-gradient-to-br from-teal-400 via-teal-500 to-ink flex items-center justify-center">
-                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_30%,white,transparent_60%)]" />
-                    <Icon size={56} className="relative text-white" strokeWidth={1.5} />
+                    {s.imagem ? (
+                      <Image
+                        src={s.imagem}
+                        alt={s.titulo}
+                        fill
+                        sizes="(max-width: 640px) 288px, 320px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_30%,white,transparent_60%)]" />
+                        <Icon size={56} className="relative text-white" strokeWidth={1.5} />
+                      </>
+                    )}
                   </div>
 
                   {/* Corpo */}
