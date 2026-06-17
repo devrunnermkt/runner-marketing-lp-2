@@ -125,7 +125,7 @@ export const siteConfig = {
       tag: "Estratégia",
       descricao:
         "Planeja o conteúdo e a estratégia de redes para construir autoridade dentro das normas do CFM.",
-      foto: "",
+      foto: "/time/jorge.webp",
     },
     {
       nome: "Victor Luiz",
@@ -141,7 +141,7 @@ export const siteConfig = {
       tag: "Audiovisual",
       descricao:
         "Captura e edita os vídeos que dão vida ao conteúdo e prendem a atenção do paciente.",
-      foto: "",
+      foto: "/time/nicolas.webp",
     },
   ],
 
