@@ -45,7 +45,7 @@ export const siteConfig = {
   videoUrl: "[VIDEO_URL]", // (legado) URL do YouTube/Vimeo
   // URL pública do master.m3u8 hospedado no Cloudflare R2.
   // Ex: "https://pub-xxxx.r2.dev/runner-vsl-hls/master.m3u8"
-  vslHlsUrl: "",
+  vslHlsUrl: "https://pub-006b4685715d46abb5fc5e626d18add4.r2.dev/runner-vsl-hls/master.m3u8",
 
   // ── Avaliações Google (estilo card do Google) ────────────
   // Manter como placeholder — não inventar depoimentos reais.
