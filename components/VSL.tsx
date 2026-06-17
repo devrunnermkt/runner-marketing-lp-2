@@ -42,8 +42,17 @@ export default function VSL() {
           video.src = url;
         }
       }
-      video.muted = true;
-      video.play().catch(() => {});
+      // Tenta tocar COM som ao entrar no bloco. Se o navegador bloquear
+      // (autoplay com áudio sem interação prévia), cai pra mudo + botão.
+      video.muted = false;
+      try {
+        await video.play();
+        setMuted(false);
+      } catch {
+        video.muted = true;
+        setMuted(true);
+        video.play().catch(() => {});
+      }
     };
 
     const io = new IntersectionObserver(
@@ -90,7 +99,7 @@ export default function VSL() {
     <section className="py-20 md:py-28 bg-ink">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Assista antes de investir mais um real em anúncios
+          Comece por aqui
         </h2>
         <p className="text-base sm:text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
           Em 2 minutos você entende por que clínicas com ótima reputação ainda
