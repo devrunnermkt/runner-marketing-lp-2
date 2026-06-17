@@ -44,11 +44,9 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-slate-200 leading-relaxed mb-10 max-w-2xl">
-            Você é um ótimo médico, mas a sua agenda ainda tem buracos. Enquanto
-            isso, agências vendem o seu consultório como loja: escassez,
-            promessa de cura e antes e depois irregular, tudo que pode virar um
-            processo no Conselho. A Runner faz o oposto: atrai os pacientes que
-            já querem se tratar, dentro de cada linha da{" "}
+            Agências comuns vendem o seu consultório como loja — escassez,
+            antes e depois, promessas que viram processo no Conselho. A Runner
+            atrai pacientes que já querem se tratar, dentro de cada linha da{" "}
             <strong className="text-white">Resolução CFM 2.336/2023</strong>.
           </p>
 

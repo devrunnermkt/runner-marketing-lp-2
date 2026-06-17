@@ -32,7 +32,7 @@ export default function TeamPhoto({
       src={src}
       alt={alt}
       fill
-      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
       className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
       onError={() => setErro(true)}
     />

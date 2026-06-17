@@ -72,16 +72,17 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+      </head>
+      <body className="antialiased bg-white text-slate-900">
+        {children}
+        <CookieConsent />
+        {/* Clarity carrega após o conteúdo para não bloquear renderização */}
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "x7zng8vw0o");`,
           }}
         />
-      </head>
-      <body className="antialiased bg-white text-slate-900">
-        {children}
-        <CookieConsent />
       </body>
     </html>
   );

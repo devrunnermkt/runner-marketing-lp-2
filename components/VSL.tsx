@@ -104,12 +104,12 @@ export default function VSL() {
     <section className="py-20 md:py-28 bg-ink">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Comece por aqui
+          Assista antes de decidir
         </h2>
         <p className="text-base sm:text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
-          Em 2 minutos você entende por que clínicas com ótima reputação ainda
-          têm horários vagos, e o que muda quando o marketing é feito por quem
-          entende de medicina.
+          Em menos de 3 minutos você entende por que clínicas com ótima
+          reputação ainda têm horários vagos — e o que muda quando o marketing
+          é feito por quem entende de medicina.
         </p>
 
         {/* Player */}
