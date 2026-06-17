@@ -101,31 +101,43 @@ export const siteConfig = {
   // Deixe "" para exibir o avatar placeholder com ícone.
   time: [
     {
-      nome: "Flávio Jr.",
-      funcao: "Direção criativa",
-      tag: "Estratégia",
-      descricao: "Posicionamento, estética e estratégia de marca.",
+      nome: "Flávio Junior",
+      funcao: "Diretor Criativo, Designer e Sócio",
+      tag: "Criação",
+      descricao:
+        "Lidera a direção criativa e o design das marcas, transformando estratégia em identidade visual.",
       foto: "/time/flavio.jpg",
     },
     {
       nome: "Gabriel Rubney",
-      funcao: "Gestão e atendimento",
-      tag: "Conteúdo",
-      descricao: "Rotina, relacionamento e clareza nas entregas.",
+      funcao: "Comercial e Sócio Fundador",
+      tag: "Comercial",
+      descricao:
+        "À frente do comercial, garante clareza, proximidade e um relacionamento próximo com cada cliente.",
       foto: "/time/gabriel.jpg",
     },
     {
-      nome: "Membro Runner",
-      funcao: "Performance",
-      tag: "Tráfego",
-      descricao: "Campanhas, dados e melhoria contínua.",
+      nome: "Jorge Domingos",
+      funcao: "Social Media e Estrategista",
+      tag: "Estratégia",
+      descricao:
+        "Planeja o conteúdo e a estratégia de redes para construir autoridade dentro das normas do CFM.",
       foto: "",
     },
     {
-      nome: "Membro Runner",
-      funcao: "Produção",
-      tag: "Design",
-      descricao: "Roteiro, captação, edição e design.",
+      nome: "Victor Luiz",
+      funcao: "Gestor de Tráfego Pago",
+      tag: "Tráfego",
+      descricao:
+        "Cuida das campanhas de mídia paga para atrair os pacientes certos com previsibilidade.",
+      foto: "",
+    },
+    {
+      nome: "Nicolas Ortiz",
+      funcao: "Filmaker e Editor",
+      tag: "Audiovisual",
+      descricao:
+        "Captura e edita os vídeos que dão vida ao conteúdo e prendem a atenção do paciente.",
       foto: "",
     },
   ],

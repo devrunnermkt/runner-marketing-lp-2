@@ -18,7 +18,7 @@ export default function Time() {
         </div>
 
         {/* Grid do time */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {time.map((membro, i) => {
             return (
               <article
