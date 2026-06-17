@@ -17,12 +17,12 @@ export default function CTAFinal() {
     >
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          A sua agenda pode estar cheia já no próximo mês
+          A sua agenda lotada é apenas uma decisão.
         </h2>
         <p className="text-base sm:text-lg text-teal-100 mb-10 max-w-xl mx-auto">
-          Faça um diagnóstico gratuito e descubra onde você está perdendo
-          pacientes e onde está correndo risco sem perceber. Leva poucos minutos
-          e não custa nada.
+          Agende o seu diagnóstico gratuito. Vamos desenhar o plano de ação que
+          levará a sua clínica para o próximo nível de previsibilidade e
+          faturamento.
         </p>
 
         <a
@@ -39,7 +39,7 @@ export default function CTAFinal() {
         </a>
 
         <p className="mt-5 text-sm text-teal-200">
-          Resposta em até {siteConfig.prazoDias}h úteis · Sem compromisso
+          Resposta em até 30min · Sem compromisso
         </p>
       </div>
     </section>

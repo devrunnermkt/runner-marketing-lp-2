@@ -55,8 +55,8 @@ export default function Time() {
         </div>
 
         <p className="text-center mt-12 text-slate-500 text-sm max-w-lg mx-auto">
-          Um time pequeno, especialista e que responde, sem você virar mais um
-          número numa agência grande.
+          Atendimento premium e ágil. Uma equipe altamente especializada onde a
+          sua clínica é prioridade absoluta, e não apenas mais um contrato.
         </p>
 
         <div className="mt-8 text-center">

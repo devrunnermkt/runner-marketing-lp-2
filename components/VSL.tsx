@@ -107,9 +107,9 @@ export default function VSL() {
           Assista antes de decidir
         </h2>
         <p className="text-base sm:text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
-          Em menos de 3 minutos você entende por que clínicas com ótima
-          reputação ainda têm horários vagos — e o que muda quando o marketing
-          é feito por quem entende de medicina.
+          Entenda em 90 segundos por que médicos com excelente reputação
+          continuam com horários vagos e o que você precisa fazer hoje para
+          atrair apenas pacientes particulares.
         </p>
 
         {/* Player */}

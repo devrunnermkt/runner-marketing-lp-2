@@ -60,9 +60,9 @@ export const siteConfig = {
 
   // ── Métricas (valores fictícios, troque pelos reais) ─────
   metricas: [
-    { valor: "120+", label: "Clínicas e profissionais atendidos" },
-    { valor: "8,4x", label: "Retorno médio sobre o investimento em mídia" },
-    { valor: "97%", label: "Dos clientes seguem com a Runner após 6 meses" },
+    { valor: "38+", label: "Clínicas e profissionais atendidos" },
+    { valor: "5,2x", label: "Retorno médio sobre o investimento em mídia" },
+    { valor: "92%", label: "Dos clientes seguem com a Runner após 6 meses" },
     { valor: "18 meses", label: "Tempo médio de parceria do cliente com a Runner" },
   ],
 
