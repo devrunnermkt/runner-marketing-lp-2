@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/app/siteConfig";
 import CountUp from "./CountUp";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 const etapas = [
   {
@@ -151,6 +151,21 @@ export default function Metodo() {
               <p className="text-sm text-slate-600">{m.label}</p>
             </div>
           ))}
+        </div>
+
+        {/* CTA após métricas */}
+        <div className="mt-14 text-center">
+          <a
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-contato="whatsapp"
+            data-local="metodo"
+            className="btn-contato inline-flex items-center gap-2 px-7 py-4 bg-teal-600 text-white text-base sm:text-lg font-semibold rounded-xl hover:bg-teal-500 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+          >
+            Quero aplicar esse método na minha clínica
+            <ArrowRight size={18} />
+          </a>
         </div>
       </div>
     </section>

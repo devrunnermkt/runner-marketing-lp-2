@@ -38,11 +38,11 @@ export default function ProjetosRunner() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-4">
-            Alguns dos projetos Runner
+            Imagem de alto valor atrai pacientes de alto valor.
           </h2>
           <p className="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto">
-            Marcas de saúde que a gente ajudou a comunicar melhor. Toque para ver
-            cada projeto.
+            Veja como o nosso design e edições de vídeo elevam o status da sua
+            clínica logo no primeiro contato.
           </p>
         </div>
 

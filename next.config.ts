@@ -10,7 +10,10 @@ const csp = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
   "img-src 'self' data: blob: https:",
-  "connect-src 'self' https://*.clarity.ms https://c.bing.com",
+  // Clarity (analytics) + Cloudflare R2 (fragmentos do vídeo HLS da VSL)
+  "connect-src 'self' https://*.clarity.ms https://c.bing.com https://*.r2.dev",
+  // Vídeo HLS: blob para o MediaSource (hls.js) e r2.dev para o Safari (HLS nativo)
+  "media-src 'self' blob: https://*.r2.dev",
   "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
   "frame-ancestors 'self'",
   "base-uri 'self'",

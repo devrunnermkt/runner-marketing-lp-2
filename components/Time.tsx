@@ -1,4 +1,5 @@
 import { siteConfig } from "@/app/siteConfig";
+import { ArrowRight } from "lucide-react";
 import TeamPhoto from "./TeamPhoto";
 
 export default function Time() {
@@ -54,9 +55,23 @@ export default function Time() {
         </div>
 
         <p className="text-center mt-12 text-slate-500 text-sm max-w-lg mx-auto">
-          Um time pequeno, especialista e que responde, sem você virar mais um
-          número numa agência grande.
+          Atendimento premium e ágil. Uma equipe altamente especializada onde a
+          sua clínica é prioridade absoluta, e não apenas mais um contrato.
         </p>
+
+        <div className="mt-8 text-center">
+          <a
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-contato="whatsapp"
+            data-local="time"
+            className="btn-contato inline-flex items-center gap-2 px-7 py-4 bg-teal-600 text-white text-base sm:text-lg font-semibold rounded-xl hover:bg-teal-500 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+          >
+            Falar com o time agora
+            <ArrowRight size={18} />
+          </a>
+        </div>
       </div>
     </section>
   );

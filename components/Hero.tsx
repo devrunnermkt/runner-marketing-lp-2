@@ -1,4 +1,4 @@
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -30,26 +30,23 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Label */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-            <ShieldCheck size={14} className="text-teal-300" />
             <span className="text-xs font-semibold text-teal-100 uppercase tracking-wider">
-              Agência de marketing para médicos e clínicas
+              🎯 Marketing de alta conversão para médicos e clínicas
             </span>
           </div>
 
           {/* H1 */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Encha a sua agenda de pacientes.{" "}
-            <span className="text-teal-300">Sem risco com o CFM.</span>
+            Encha a sua agenda com pacientes particulares e tenha{" "}
+            <span className="text-teal-300">previsibilidade todos os meses.</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-slate-200 leading-relaxed mb-10 max-w-2xl">
-            Você é um ótimo médico, mas a sua agenda ainda tem buracos. Enquanto
-            isso, agências vendem o seu consultório como loja: escassez,
-            promessa de cura e antes e depois irregular, tudo que pode virar um
-            processo no Conselho. A Runner faz o oposto: atrai os pacientes que
-            já querem se tratar, dentro de cada linha da{" "}
-            <strong className="text-white">Resolução CFM 2.336/2023</strong>.
+            Deixe de depender de convênios ou de indicações instáveis. Nós
+            unimos tráfego pago inteligente e produção de conteúdo de
+            autoridade para atrair o paciente que valoriza a sua especialidade
+            e paga o valor justo pela sua consulta.
           </p>
 
           {/* CTA */}
@@ -60,7 +57,7 @@ export default function Hero() {
               data-local="hero"
               className="btn-contato inline-flex items-center justify-center gap-2 px-7 py-4 bg-teal-500 text-white text-base sm:text-lg font-semibold rounded-xl hover:bg-teal-400 transition-colors shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-ink"
             >
-              Quero minha agenda cheia e sem risco
+              Quero atrair o paciente ideal
               <ArrowRight size={18} />
             </a>
           </div>

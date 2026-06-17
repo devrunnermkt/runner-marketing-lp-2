@@ -42,7 +42,10 @@ export const siteConfig = {
   linkGoogleBusiness: "[LINK_GOOGLE_BUSINESS]",
 
   // ── Vídeo de vendas ─────────────────────────────────────
-  videoUrl: "[VIDEO_URL]", // URL do YouTube/Vimeo
+  videoUrl: "[VIDEO_URL]", // (legado) URL do YouTube/Vimeo
+  // URL pública do master.m3u8 hospedado no Cloudflare R2.
+  // Ex: "https://pub-xxxx.r2.dev/runner-vsl-hls/master.m3u8"
+  vslHlsUrl: "https://pub-006b4685715d46abb5fc5e626d18add4.r2.dev/runner-vsl-hls/master.m3u8",
 
   // ── Avaliações Google (estilo card do Google) ────────────
   // Manter como placeholder — não inventar depoimentos reais.
@@ -57,9 +60,9 @@ export const siteConfig = {
 
   // ── Métricas (valores fictícios, troque pelos reais) ─────
   metricas: [
-    { valor: "120+", label: "Clínicas e profissionais atendidos" },
-    { valor: "8,4x", label: "Retorno médio sobre o investimento em mídia" },
-    { valor: "97%", label: "Dos clientes seguem com a Runner após 6 meses" },
+    { valor: "38+", label: "Clínicas e profissionais atendidos" },
+    { valor: "5,2x", label: "Retorno médio sobre o investimento em mídia" },
+    { valor: "92%", label: "Dos clientes seguem com a Runner após 6 meses" },
     { valor: "18 meses", label: "Tempo médio de parceria do cliente com a Runner" },
   ],
 
@@ -122,7 +125,7 @@ export const siteConfig = {
       tag: "Estratégia",
       descricao:
         "Planeja o conteúdo e a estratégia de redes para construir autoridade dentro das normas do CFM.",
-      foto: "",
+      foto: "/time/jorge.webp",
     },
     {
       nome: "Victor Luiz",
@@ -130,7 +133,7 @@ export const siteConfig = {
       tag: "Tráfego",
       descricao:
         "Cuida das campanhas de mídia paga para atrair os pacientes certos com previsibilidade.",
-      foto: "",
+      foto: "/time/victor.webp",
     },
     {
       nome: "Nicolas Ortiz",
@@ -138,7 +141,7 @@ export const siteConfig = {
       tag: "Audiovisual",
       descricao:
         "Captura e edita os vídeos que dão vida ao conteúdo e prendem a atenção do paciente.",
-      foto: "",
+      foto: "/time/nicolas.webp",
     },
   ],
 
