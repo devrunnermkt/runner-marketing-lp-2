@@ -83,7 +83,7 @@ export const siteConfig = {
         "Gestão completa de redes sociais: conteúdo, roteiro e posicionamento de autoridade.",
       foto: "/projetos/dr.fredericopessoa.jpg",
       instagram: "https://www.instagram.com/dr.fredericopessoa/",
-      behance: "",
+      behance: "https://www.behance.net/gallery/251240145/Dr-Frederico-Pessoa",
     },
     {
       nome: "Dr. Yan Campos",
