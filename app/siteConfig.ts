@@ -133,7 +133,7 @@ export const siteConfig = {
       tag: "Tráfego",
       descricao:
         "Cuida das campanhas de mídia paga para atrair os pacientes certos com previsibilidade.",
-      foto: "",
+      foto: "/time/victor.webp",
     },
     {
       nome: "Nicolas Ortiz",
