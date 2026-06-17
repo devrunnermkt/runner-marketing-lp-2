@@ -1,9 +1,90 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import type HlsType from "hls.js";
 import { siteConfig } from "@/app/siteConfig";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 
 export default function VSL() {
-  const isPlaceholder =
-    !siteConfig.videoUrl || siteConfig.videoUrl === "[VIDEO_URL]";
+  const url = siteConfig.vslHlsUrl;
+  const isPlaceholder = !url;
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const startedRef = useRef(false);
+  const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    if (isPlaceholder) return;
+    const container = containerRef.current;
+    const video = videoRef.current;
+    if (!container || !video) return;
+
+    let hls: HlsType | undefined;
+    let cancelled = false;
+
+    // Só inicializa (e baixa o hls.js + vídeo) quando o bloco entra na tela.
+    const start = async () => {
+      if (startedRef.current) return;
+      startedRef.current = true;
+
+      if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        // Safari / iOS reproduzem HLS nativamente
+        video.src = url;
+      } else {
+        const { default: Hls } = await import("hls.js");
+        if (cancelled) return;
+        if (Hls.isSupported()) {
+          hls = new Hls({ maxBufferLength: 30 });
+          hls.loadSource(url);
+          hls.attachMedia(video);
+        } else {
+          video.src = url;
+        }
+      }
+      video.muted = true;
+      video.play().catch(() => {});
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            if (!startedRef.current) start();
+            else if (video.paused) video.play().catch(() => {});
+          } else if (startedRef.current) {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    io.observe(container);
+
+    return () => {
+      cancelled = true;
+      io.disconnect();
+      hls?.destroy();
+    };
+  }, [isPlaceholder, url]);
+
+  const ativarSom = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = false;
+    setMuted(false);
+    video.play().catch(() => {});
+  };
+
+  const tirarSom = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    setMuted(true);
+  };
+
+  // Sem URL configurada: não renderiza a seção (evita mostrar bloco vazio).
+  if (isPlaceholder) return null;
 
   return (
     <section className="py-20 md:py-28 bg-ink">
@@ -18,22 +99,43 @@ export default function VSL() {
         </p>
 
         {/* Player */}
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl mb-10 bg-slate-800">
-          {isPlaceholder ? (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-              <PlayCircle size={72} className="text-teal-400 opacity-70" />
-              <span className="text-slate-400 text-sm">
-                [VIDEO_URL]: substitua em siteConfig.ts
+        <div
+          ref={containerRef}
+          className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl mb-10 bg-slate-800"
+        >
+          <video
+            ref={videoRef}
+            poster="/vsl-poster.webp"
+            playsInline
+            muted
+            loop={false}
+            preload="none"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Overlay "Ativar som" enquanto mudo */}
+          {muted && (
+            <button
+              onClick={ativarSom}
+              aria-label="Ativar som do vídeo"
+              className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group"
+            >
+              <span className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/95 text-ink text-base sm:text-lg font-bold shadow-xl group-hover:scale-105 transition-transform">
+                <Volume2 size={22} className="text-teal-600" />
+                Ativar som
               </span>
-            </div>
-          ) : (
-            <iframe
-              src={siteConfig.videoUrl}
-              title="Vídeo de vendas Runner Marketing"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
+            </button>
+          )}
+
+          {/* Botão pequeno pra mutar de novo, quando com som */}
+          {!muted && (
+            <button
+              onClick={tirarSom}
+              aria-label="Desativar som do vídeo"
+              className="absolute bottom-3 right-3 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors"
+            >
+              <VolumeX size={18} />
+            </button>
           )}
         </div>
 
