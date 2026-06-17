@@ -96,10 +96,7 @@ function CardAvaliacao({ av }: { av: Avaliacao }) {
 }
 
 export default function ProvasSociais() {
-  const { avaliacoes } = siteConfig;
-
-  return (
-    <section className="py-20 md:py-28 bg-white overflow-hidden hidden">
+  return null;
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título + selo */}
         <div className="text-center mb-12">
