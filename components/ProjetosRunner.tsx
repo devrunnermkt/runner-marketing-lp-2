@@ -64,7 +64,9 @@ export default function ProjetosRunner() {
                     alt={`Projeto da Runner: ${proj.nome}`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                    className={`object-cover transition-transform duration-300 ${
+                      proj.fotoClasse ?? "group-hover:scale-[1.03]"
+                    }`}
                   />
                 </a>
 

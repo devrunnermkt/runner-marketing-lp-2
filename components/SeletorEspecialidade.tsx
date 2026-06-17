@@ -106,16 +106,16 @@ export default function SeletorEspecialidade() {
                 ))}
               </div>
 
-              {/* Exemplo de anúncio */}
+              {/* Saiba que */}
               <div
                 className="rounded-xl border-l-4 bg-slate-50 px-4 py-3 mb-7"
                 style={{ borderColor: cor }}
               >
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-                  Exemplo de anúncio
+                  Saiba que:
                 </p>
-                <p className="text-sm sm:text-base text-slate-700 italic">
-                  &ldquo;{sel.anuncio}&rdquo;
+                <p className="text-sm sm:text-base text-slate-700">
+                  {sel.anuncio}
                 </p>
               </div>
 

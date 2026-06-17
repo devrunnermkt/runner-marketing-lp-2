@@ -31,6 +31,7 @@ export default function Time() {
                   <TeamPhoto
                     src={membro.foto}
                     alt={`${membro.nome}, ${membro.funcao} na Runner Marketing`}
+                    fotoClasse={membro.fotoClasse}
                   />
 
                   {/* Badge */}

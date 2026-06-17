@@ -12,9 +12,11 @@ import { User } from "lucide-react";
 export default function TeamPhoto({
   src,
   alt,
+  fotoClasse,
 }: {
   src: string;
   alt: string;
+  fotoClasse?: string;
 }) {
   const [erro, setErro] = useState(false);
   const mostrarFoto = src && src.trim() !== "" && !erro;
@@ -33,7 +35,11 @@ export default function TeamPhoto({
       alt={alt}
       fill
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-      className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+      className={`object-cover transition-transform duration-300 ${
+        fotoClasse && fotoClasse.trim() !== ""
+          ? fotoClasse
+          : "group-hover:scale-[1.03]"
+      }`}
       onError={() => setErro(true)}
     />
   );

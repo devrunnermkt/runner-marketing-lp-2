@@ -36,7 +36,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Cardiologista com a agenda cheia de pacientes que já chegam decididos a tratar.",
     anuncio:
-      "Pressão alta ou dor no peito? Agende sua avaliação cardiológica ainda esta semana.",
+      "Mais de 400 mil mortes por doenças cardiovasculares mostram uma demanda clara: pacientes com pressão alta, dor no peito e histórico familiar precisam encontrar um cardiologista antes da urgência.",
     metricas: [
       { valor: "+34", rotulo: "novas consultas no mês" },
       { valor: "R$ 39", rotulo: "custo por agendamento" },
@@ -59,7 +59,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Dermatologista com a agenda preenchida de pacientes certos para estética e clínica.",
     anuncio:
-      "Manchas, acne ou check-up de pele? Agende sua avaliação dermatológica.",
+      "O câncer de pele representa cerca de 30% dos tumores no Brasil. Quem percebe manchas, acne, queda de cabelo ou sinais na pele busca um especialista em quem possa confiar.",
     metricas: [
       { valor: "+48", rotulo: "novas consultas no mês" },
       { valor: "R$ 31", rotulo: "custo por agendamento" },
@@ -82,7 +82,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Ortopedista com a agenda cheia de pacientes prontos para investir no tratamento.",
     anuncio:
-      "Dor no joelho, coluna ou ombro? Agende sua avaliação ortopédica.",
+      "Dor na coluna, joelho e articulações limita trabalho, treino e rotina. O ortopedista que aparece com autoridade vira a escolha de quem quer voltar a se movimentar.",
     metricas: [
       { valor: "+29", rotulo: "novas consultas no mês" },
       { valor: "R$ 44", rotulo: "custo por agendamento" },
@@ -104,7 +104,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Psiquiatra com a agenda equilibrada de pacientes comprometidos com o acompanhamento.",
     anuncio:
-      "Ansiedade, insônia ou desânimo? Agende uma conversa com um psiquiatra.",
+      "Ansiedade, insônia e esgotamento fazem parte da rotina de milhões de pessoas. O psiquiatra precisa aparecer para quem já decidiu que não quer lidar com isso sozinho.",
     metricas: [
       { valor: "+26", rotulo: "novas consultas no mês" },
       { valor: "R$ 47", rotulo: "custo por agendamento" },
@@ -121,13 +121,37 @@ export const especialidades: Especialidade[] = [
     ),
   },
   {
+    id: "psicanalise",
+    nome: "Psicanálise",
+    cor: "#9333ea",
+    headline:
+      "Psicanalista com presença digital profunda para atrair pacientes alinhados ao processo.",
+    anuncio:
+      "Muita gente não busca apenas aliviar sintomas. Busca entender padrões, relações e conflitos internos. O psicanalista que comunica profundidade vira ponto de confiança.",
+    metricas: [
+      { valor: "+22", rotulo: "novas consultas no mês" },
+      { valor: "R$ 43", rotulo: "custo por agendamento" },
+      { valor: "5,8x", rotulo: "retorno sobre o investimento" },
+    ],
+    icone: (
+      <svg {...svg}>
+        <path
+          pathLength={1}
+          d="M12 4.5c-3.6 0-6.5 2.6-6.5 6.1 0 2.3 1.2 4.2 3 5.3v3.6l3.2-2.7H12c3.6 0 6.5-2.6 6.5-6.2S15.6 4.5 12 4.5z"
+        />
+        <path pathLength={1} d="M9 10.5c.6-.8 1.5-1.2 3-1.2s2.4.4 3 1.2" />
+        <path pathLength={1} d="M9.5 13.5h5" />
+      </svg>
+    ),
+  },
+  {
     id: "odontologia",
     nome: "Odontologia",
     cor: "#0d9488",
     headline:
       "Clínica odontológica com a cadeira ocupada de implante e ortodontia.",
     anuncio:
-      "Implante, clareamento ou aparelho? Agende sua avaliação odontológica gratuita.",
+      "Saúde bucal também é autoestima. Quem sente dor, insegurança ao sorrir ou busca estética precisa encontrar uma clínica que transmita cuidado e segurança.",
     metricas: [
       { valor: "+63", rotulo: "avaliações no mês" },
       { valor: "R$ 22", rotulo: "custo por avaliação" },
@@ -149,7 +173,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Ginecologista com a agenda cheia de pacientes que valorizam o acompanhamento.",
     anuncio:
-      "Está em dia com seu check-up? Agende sua consulta ginecológica.",
+      "Prevenção, exames, fertilidade e saúde íntima fazem parte da rotina de milhares de mulheres. A ginecologista que educa com clareza se torna referência.",
     metricas: [
       { valor: "+41", rotulo: "novas consultas no mês" },
       { valor: "R$ 34", rotulo: "custo por agendamento" },
@@ -169,7 +193,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Pediatra com a agenda cheia de famílias que buscam acompanhamento de confiança.",
     anuncio:
-      "Seu filho precisa de acompanhamento? Agende a consulta com o pediatra.",
+      "Pais procuram confiança antes de escolher quem vai cuidar dos filhos. O pediatra bem posicionado aparece nas decisões mais importantes da família.",
     metricas: [
       { valor: "+52", rotulo: "novas consultas no mês" },
       { valor: "R$ 27", rotulo: "custo por agendamento" },
@@ -191,7 +215,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Oftalmologista com a agenda cheia de pacientes prontos para cuidar da visão.",
     anuncio:
-      "Vista cansada ou exame em atraso? Agende sua consulta oftalmológica.",
+      "Mais de 2 bilhões de pessoas vivem com algum problema visual no mundo. Quem sente dificuldade para enxergar busca resposta rápida e um especialista confiável.",
     metricas: [
       { valor: "+45", rotulo: "novas consultas no mês" },
       { valor: "R$ 30", rotulo: "custo por agendamento" },
@@ -211,7 +235,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Neurologista com a agenda cheia de pacientes que buscam diagnóstico de confiança.",
     anuncio:
-      "Dores de cabeça frequentes ou esquecimentos? Agende sua avaliação neurológica.",
+      "Dor de cabeça constante, tontura, esquecimentos e sintomas neurológicos geram medo. O neurologista precisa aparecer no momento em que o paciente busca orientação.",
     metricas: [
       { valor: "+24", rotulo: "novas consultas no mês" },
       { valor: "R$ 51", rotulo: "custo por agendamento" },
@@ -238,7 +262,7 @@ export const especialidades: Especialidade[] = [
     headline:
       "Endocrinologista com a agenda cheia de pacientes comprometidos com o tratamento.",
     anuncio:
-      "Tireoide, diabetes ou hormônios? Agende sua avaliação endocrinológica.",
+      "Excesso de peso, diabetes, tireoide e alterações hormonais afetam a rotina todos os dias. O endocrinologista aparece como o próximo passo para tratar a causa.",
     metricas: [
       { valor: "+33", rotulo: "novas consultas no mês" },
       { valor: "R$ 40", rotulo: "custo por agendamento" },

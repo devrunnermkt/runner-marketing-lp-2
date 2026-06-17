@@ -75,7 +75,7 @@ export const siteConfig = {
       categoria: "Identidade visual",
       descricao:
         "Presença digital sofisticada, identidade profissional e comunicação focada em performance.",
-      foto: "/projetos/justojulia.jpg",
+      foto: "/projetos/justojulia.jpeg",
       instagram: "https://www.instagram.com/justojulia/",
       behance: "https://www.behance.net/gallery/251238183/Julia-Justo-Medicina-Esportiva",
     },
@@ -84,7 +84,8 @@ export const siteConfig = {
       categoria: "Social media completa",
       descricao:
         "Gestão completa de redes sociais: conteúdo, roteiro e posicionamento de autoridade.",
-      foto: "/projetos/dr.fredericopessoa.jpg",
+      foto: "/projetos/dr.fredericopessoa.jpeg",
+      fotoClasse: "scale-[2] translate-y-25 translate-x-0 group-hover:scale-[2.1]",
       instagram: "https://www.instagram.com/dr.fredericopessoa/",
       behance: "https://www.behance.net/gallery/251240145/Dr-Frederico-Pessoa",
     },
@@ -93,7 +94,7 @@ export const siteConfig = {
       categoria: "Social media completa",
       descricao:
         "Identidade visual, landing page, materiais de marca e conteúdo estratégico.",
-      foto: "/projetos/dryancampos.jpg",
+      foto: "/projetos/dryancampos2.jpeg",
       instagram: "https://www.instagram.com/dryancampos/",
       behance: "https://www.behance.net/gallery/251238713/Yan-Campos-Tricologia",
     },
@@ -110,6 +111,7 @@ export const siteConfig = {
       descricao:
         "Lidera a direção criativa e o design das marcas, transformando estratégia em identidade visual.",
       foto: "/time/flavio.jpg",
+      fotoClasse: "",
     },
     {
       nome: "Gabriel Rubney",
@@ -118,6 +120,7 @@ export const siteConfig = {
       descricao:
         "À frente do comercial, garante clareza, proximidade e um relacionamento próximo com cada cliente.",
       foto: "/time/gabriel.jpg",
+      fotoClasse: "scale-[1.2] -translate-y-3",
     },
     {
       nome: "Jorge Domingos",
@@ -126,6 +129,7 @@ export const siteConfig = {
       descricao:
         "Planeja o conteúdo e a estratégia de redes para construir autoridade dentro das normas do CFM.",
       foto: "/time/jorge.webp",
+      fotoClasse: "scale-[1.5] -translate-y-4 translate-x-2",
     },
     {
       nome: "Victor Luiz",
@@ -134,6 +138,7 @@ export const siteConfig = {
       descricao:
         "Cuida das campanhas de mídia paga para atrair os pacientes certos com previsibilidade.",
       foto: "/time/victor.webp",
+      fotoClasse: "scale-[1.5] -translate-y-9 translate-x-10",
     },
     {
       nome: "Nicolas Ortiz",
@@ -142,6 +147,7 @@ export const siteConfig = {
       descricao:
         "Captura e edita os vídeos que dão vida ao conteúdo e prendem a atenção do paciente.",
       foto: "/time/nicolas.webp",
+      fotoClasse: "scale-[1.5] -translate-y-9 -translate-x-3",
     },
   ],
 
