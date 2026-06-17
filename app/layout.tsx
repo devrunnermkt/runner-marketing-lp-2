@@ -3,6 +3,12 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "./siteConfig";
 import CookieConsent from "@/components/CookieConsent";
+import Analytics from "@/components/Analytics";
+
+// URL pública do site (defina NEXT_PUBLIC_SITE_URL na Vercel, ex: https://lp.runner.com.br)
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://runnermarketing.com.br";
+// Só permite indexação no ambiente de produção (previews ficam noindex)
+const isProd = process.env.VERCEL_ENV === "production" || process.env.NEXT_PUBLIC_ALLOW_INDEX === "true";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,6 +24,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: `${siteConfig.siteName} | Marketing Médico que Enche a Agenda, sem Risco no CFM`,
   description: siteConfig.siteDescription,
   keywords: [
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteConfig.siteName} | Marketing Médico que Enche a Agenda, sem Risco no CFM`,
     description: siteConfig.siteDescription,
-    url: siteConfig.siteUrl,
+    url: SITE_URL,
     siteName: siteConfig.siteName,
     locale: "pt_BR",
     type: "website",
@@ -45,8 +52,8 @@ export const metadata: Metadata = {
     description: siteConfig.siteDescription,
   },
   robots: {
-    index: true,
-    follow: true,
+    index: isProd,
+    follow: isProd,
   },
 };
 
@@ -55,7 +62,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: siteConfig.siteName,
   description: siteConfig.siteDescription,
-  url: siteConfig.siteUrl,
+  url: SITE_URL,
   areaServed: ["São Paulo", "Porto Velho"],
   serviceType: "Marketing Digital para Saúde",
 };
@@ -72,16 +79,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "x7zng8vw0o");`,
-          }}
-        />
       </head>
       <body className="antialiased bg-white text-slate-900">
         {children}
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );

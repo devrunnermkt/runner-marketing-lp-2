@@ -27,6 +27,7 @@ const navLinks = [
   { label: "Especialidades", href: "/#especialidades" },
   { label: "Projetos", href: "/#projetos" },
   { label: "Indique e Ganhe", href: "/indique" },
+  { label: "Política de Privacidade", href: "/politica-de-privacidade" },
   { label: "Política de Cookies", href: "/politica-de-cookies" },
 ];
 

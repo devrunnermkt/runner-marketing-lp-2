@@ -85,8 +85,20 @@ export default function IndiqueClient() {
     if (ref) {
       const dec = decToken(ref);
       if (dec) {
-        setIndicadoPor({ id: dec.id, nome: dec.nome });
-        setModal("form");
+        // Sanitiza o nome vindo do link (controlavel por terceiros):
+        // tira angle brackets, normaliza espacos e limita o tamanho exibido.
+        const nomeLimpo = String(dec.nome || "")
+          .replace(/[<>]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim()
+          .slice(0, 60);
+        const idLimpo = String(dec.id || "")
+          .replace(/[^a-z0-9-]/gi, "")
+          .slice(0, 40);
+        if (nomeLimpo) {
+          setIndicadoPor({ id: idLimpo, nome: nomeLimpo });
+          setModal("form");
+        }
       }
     }
   }, []);

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { siteConfig } from "@/app/siteConfig";
 import { ArrowRight } from "lucide-react";
 
@@ -51,6 +52,8 @@ export default function CTAFinal() {
               id="cta-nome"
               type="text"
               required
+              maxLength={80}
+              autoComplete="name"
               placeholder="Seu nome"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
@@ -69,6 +72,9 @@ export default function CTAFinal() {
               id="cta-whatsapp"
               type="tel"
               required
+              maxLength={20}
+              inputMode="tel"
+              autoComplete="tel"
               placeholder="(11) 99999-9999"
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value)}
@@ -87,6 +93,7 @@ export default function CTAFinal() {
               id="cta-especialidade"
               type="text"
               required
+              maxLength={120}
               placeholder="Ex: Dermatologia · Clínica Santa Clara"
               value={especialidade}
               onChange={(e) => setEspecialidade(e.target.value)}
@@ -106,6 +113,16 @@ export default function CTAFinal() {
 
           <p className="text-center text-xs text-slate-400">
             Resposta em até {siteConfig.prazoDias}h úteis. Sem compromisso.
+          </p>
+          <p className="text-center text-xs text-slate-400">
+            Ao enviar, você concorda em ser contatado pela Runner e com a nossa{" "}
+            <Link
+              href="/politica-de-privacidade"
+              className="underline underline-offset-2 hover:text-slate-600"
+            >
+              Política de Privacidade
+            </Link>
+            .
           </p>
         </form>
       </div>

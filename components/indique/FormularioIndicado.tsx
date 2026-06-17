@@ -130,6 +130,7 @@ export default function FormularioIndicado({
                 value={mensagem}
                 onChange={(e) => setMensagem(e.target.value)}
                 rows={3}
+                maxLength={500}
                 placeholder="Conte rapidamente sobre a sua clínica"
                 className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
@@ -172,6 +173,7 @@ function Campo({
       <input
         type={type}
         required={required}
+        maxLength={120}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}

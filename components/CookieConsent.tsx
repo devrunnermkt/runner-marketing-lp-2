@@ -28,6 +28,10 @@ export default function CookieConsent() {
   function decidir(value: "accepted" | "rejected") {
     setConsent(value);
     setVisivel(false);
+    if (value === "accepted") {
+      // Avisa o componente de Analytics para carregar o Clarity na hora
+      window.dispatchEvent(new Event("cookie-consent-accepted"));
+    }
   }
 
   if (!visivel) return null;
