@@ -75,7 +75,7 @@ export const siteConfig = {
       categoria: "Identidade visual",
       descricao:
         "Presença digital sofisticada, identidade profissional e comunicação focada em performance.",
-      foto: "/projetos/justojulia.jpeg",
+      foto: "/projetos/justojulia.jpg",
       instagram: "https://www.instagram.com/justojulia/",
       behance: "https://www.behance.net/gallery/251238183/Julia-Justo-Medicina-Esportiva",
     },
@@ -84,8 +84,8 @@ export const siteConfig = {
       categoria: "Social media completa",
       descricao:
         "Gestão completa de redes sociais: conteúdo, roteiro e posicionamento de autoridade.",
-      foto: "/projetos/dr.fredericopessoa.jpeg",
-      fotoClasse: "scale-[2] translate-y-25 translate-x-0 group-hover:scale-[2.1]",
+      foto: "/projetos/dr.fredericopessoa.jpg",
+      fotoClasse: "scale-[1.5] translate-y-15 -translate-x-9 group-hover:scale-[2.1]",
       instagram: "https://www.instagram.com/dr.fredericopessoa/",
       behance: "https://www.behance.net/gallery/251240145/Dr-Frederico-Pessoa",
     },
@@ -94,7 +94,7 @@ export const siteConfig = {
       categoria: "Social media completa",
       descricao:
         "Identidade visual, landing page, materiais de marca e conteúdo estratégico.",
-      foto: "/projetos/dryancampos2.jpeg",
+      foto: "/projetos/dryancampos.jpg",
       instagram: "https://www.instagram.com/dryancampos/",
       behance: "https://www.behance.net/gallery/251238713/Yan-Campos-Tricologia",
     },
