@@ -35,7 +35,12 @@ export default function VSL() {
         const { default: Hls } = await import("hls.js");
         if (cancelled) return;
         if (Hls.isSupported()) {
-          hls = new Hls({ maxBufferLength: 30 });
+          hls = new Hls({
+            startLevel: 0, // começa na menor qualidade → início instantâneo (ABR sobe depois)
+            maxBufferLength: 30,
+            startFragPrefetch: true, // já busca o 1º fragmento antes de dar play
+            abrEwmaDefaultEstimate: 1_000_000, // estimativa inicial pra não testar banda antes
+          });
           hls.loadSource(url);
           hls.attachMedia(video);
         } else {
