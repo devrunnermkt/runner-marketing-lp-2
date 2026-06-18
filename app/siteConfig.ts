@@ -20,7 +20,7 @@ export const siteConfig = {
   siteName: "Runner Marketing",
   siteDescription:
     "Agência de marketing para médicos e clínicas. Enchemos a sua agenda com os pacientes certos, dentro da Resolução CFM nº 2.336/2023. Diagnóstico gratuito.",
-  siteUrl: "[SITE_URL]", // ex: https://runnermarketing.com.br
+  siteUrl: "https://runnermarketing.com.br",
   openGraphImage: "[OG_IMAGE_URL]",
   logoText: "Runner",
 
