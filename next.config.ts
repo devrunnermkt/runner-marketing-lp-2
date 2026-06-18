@@ -6,12 +6,12 @@ import type { NextConfig } from "next";
 const csp = [
   "default-src 'self'",
   // 'unsafe-inline'/'unsafe-eval' são necessários para o runtime do Next e o Clarity.
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.clarity.ms https://*.clarity.ms",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.clarity.ms https://*.clarity.ms https://connect.facebook.net",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
   "img-src 'self' data: blob: https:",
   // Clarity (analytics) + Cloudflare R2 (fragmentos do vídeo HLS da VSL)
-  "connect-src 'self' https://*.clarity.ms https://c.bing.com https://*.r2.dev",
+  "connect-src 'self' https://*.clarity.ms https://c.bing.com https://*.r2.dev https://*.facebook.com https://*.facebook.net",
   // Vídeo HLS: blob para o MediaSource (hls.js) e r2.dev para o Safari (HLS nativo)
   "media-src 'self' blob: https://*.r2.dev",
   "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
