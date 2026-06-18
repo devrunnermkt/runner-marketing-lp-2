@@ -5,11 +5,15 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Especialidades", href: "/#especialidades" },
-  { label: "Metodologia", href: "/#resultados" },
-  { label: "Projetos", href: "/#projetos" },
+  { label: "Especialidades", scrollId: "especialidades" },
+  { label: "Metodologia", scrollId: "resultados" },
+  { label: "Projetos", scrollId: "projetos" },
   { label: "Indique e Ganhe", href: "/indique" },
-];
+] as const;
+
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,32 +75,52 @@ export default function Header() {
 
             {/* Nav desktop */}
             <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-semibold transition-all duration-300 px-10 py-3 rounded-xl"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = isScrolled ? 'rgba(30, 41, 59, 0.15)' : 'rgba(255, 255, 255, 0.15)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                  style={{
-                    color: isScrolled ? '#1e293b' : 'rgba(255, 255, 255, 0.8)',
-                    textShadow: isAtTop ? '0 1px 2px rgba(0, 0, 0, 0.3)' : 'none'
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const sharedStyle = {
+                  color: isScrolled ? '#1e293b' : 'rgba(255, 255, 255, 0.8)',
+                  textShadow: isAtTop ? '0 1px 2px rgba(0, 0, 0, 0.3)' : 'none'
+                };
+                const sharedClass = "text-sm font-semibold transition-all duration-300 px-10 py-3 rounded-xl cursor-pointer bg-transparent border-none";
+                const hoverOn = (e: React.MouseEvent<HTMLElement>) => {
+                  e.currentTarget.style.backgroundColor = isScrolled ? 'rgba(30, 41, 59, 0.15)' : 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+                };
+                const hoverOff = (e: React.MouseEvent<HTMLElement>) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.boxShadow = 'none';
+                };
+                if ("scrollId" in link) {
+                  return (
+                    <button
+                      key={link.scrollId}
+                      onClick={() => scrollTo(link.scrollId)}
+                      className={sharedClass}
+                      onMouseEnter={hoverOn}
+                      onMouseLeave={hoverOff}
+                      style={sharedStyle}
+                    >
+                      {link.label}
+                    </button>
+                  );
+                }
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className={sharedClass}
+                    onMouseEnter={hoverOn}
+                    onMouseLeave={hoverOff}
+                    style={sharedStyle}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </nav>
 
             {/* CTA desktop */}
-            <a
-              href="/#contato"
+            <button
+              onClick={() => scrollTo("contato")}
               data-contato="cta"
               data-local="header"
               className="btn-contato hidden md:inline-flex items-center px-6 py-2.5 text-base font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -109,7 +133,7 @@ export default function Header() {
               }}
             >
               Diagnóstico gratuito
-            </a>
+            </button>
 
             {/* Hambúrguer mobile */}
             <button
@@ -136,35 +160,51 @@ export default function Header() {
             }}
           >
             <div className="max-w-7xl mx-auto px-6 sm:px-8 py-4 space-y-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block text-base font-semibold py-3 px-3 rounded-md transition-all duration-300"
-                  style={{
-                    color: isScrolled ? '#0d9488' : '#ffffff',
-                    backgroundColor: isScrolled ? 'rgba(100, 116, 139, 0.08)' : 'transparent'
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="/#contato"
-                onClick={() => setMenuOpen(false)}
+              {navLinks.map((link) => {
+                if ("scrollId" in link) {
+                  return (
+                    <button
+                      key={link.scrollId}
+                      onClick={() => { scrollTo(link.scrollId); setMenuOpen(false); }}
+                      className="block w-full text-left text-base font-semibold py-3 px-3 rounded-md transition-all duration-300 bg-transparent border-none cursor-pointer"
+                      style={{
+                        color: isScrolled ? '#0d9488' : '#ffffff',
+                        backgroundColor: isScrolled ? 'rgba(100, 116, 139, 0.08)' : 'transparent'
+                      }}
+                    >
+                      {link.label}
+                    </button>
+                  );
+                }
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block text-base font-semibold py-3 px-3 rounded-md transition-all duration-300"
+                    style={{
+                      color: isScrolled ? '#0d9488' : '#ffffff',
+                      backgroundColor: isScrolled ? 'rgba(100, 116, 139, 0.08)' : 'transparent'
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+              <button
+                onClick={() => { scrollTo("contato"); setMenuOpen(false); }}
                 data-contato="cta"
                 data-local="header-mobile"
-                className="btn-contato block w-full text-center mt-3 px-5 py-3 text-base font-semibold rounded-lg transition-all duration-300 text-white"
+                className="btn-contato block w-full text-center mt-3 px-5 py-3 text-base font-semibold rounded-lg transition-all duration-300 text-white cursor-pointer border-none"
                 style={{
-                  backgroundColor: isScrolled ? '#0d9488' : '#0d9488',
+                  backgroundColor: '#0d9488',
                   boxShadow: isScrolled
                     ? '0 4px 12px rgba(13, 148, 136, 0.3)'
                     : '0 2px 6px rgba(0, 0, 0, 0.2)'
                 }}
               >
                 Diagnóstico gratuito
-              </a>
+              </button>
             </div>
           </div>
         )}
