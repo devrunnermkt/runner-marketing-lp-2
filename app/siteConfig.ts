@@ -85,7 +85,7 @@ export const siteConfig = {
       descricao:
         "Gestão completa de redes sociais: conteúdo, roteiro e posicionamento de autoridade.",
       foto: "/projetos/dr.fredericopessoa.jpg",
-      fotoClasse: "scale-[1.5] translate-y-15 -translate-x-9 group-hover:scale-[2.1]",
+      fotoClasse: "scale-[1.5] translate-y-15 -translate-x-9 group-hover:scale-[1.6]",
       instagram: "https://www.instagram.com/dr.fredericopessoa/",
       behance: "https://www.behance.net/gallery/251240145/Dr-Frederico-Pessoa",
     },
