@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.siteName,
     locale: "pt_BR",
     type: "website",
+    images: [{ url: siteConfig.openGraphImage, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",

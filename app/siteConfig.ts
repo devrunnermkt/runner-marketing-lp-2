@@ -20,7 +20,7 @@ export const siteConfig = {
   siteName: "Runner Marketing",
   siteDescription: "Agência de marketing para médicos e clínicas",
   siteUrl: "https://runnermarketing.com.br",
-  openGraphImage: "[OG_IMAGE_URL]",
+  openGraphImage: "/og-image.jpg",
   logoText: "Runner",
 
   // ── Contato / CTAs ──────────────────────────────────────
