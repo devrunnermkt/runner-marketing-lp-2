@@ -3,12 +3,27 @@
 import { useEffect } from "react";
 
 const CLARITY_ID = "x7zng8vw0o";
+const PIXEL_ID = "2501327540281469";
 const COOKIE_NAME = "rp_cookie_consent";
 
 function consentAccepted() {
   return document.cookie
     .split("; ")
     .some((c) => c === `${COOKIE_NAME}=accepted`);
+}
+
+function loadPixel() {
+  if (typeof window === "undefined") return;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const w = window as any;
+  if (w.fbq) return;
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://connect.facebook.net/en_US/fbevents.js";
+  s.onload = () => { w.fbq("init", PIXEL_ID); w.fbq("track", "PageView"); };
+  document.head.appendChild(s);
+  w.fbq = function(...a: unknown[]) { w.fbq.queue = w.fbq.queue || []; w.fbq.queue.push(a); };
+  w.fbq.loaded = true; w.fbq.version = "2.0"; w.fbq.queue = [];
 }
 
 function loadClarity() {
@@ -41,10 +56,10 @@ export default function Analytics() {
   useEffect(() => {
     if (consentAccepted()) {
       loadClarity();
+      loadPixel();
       return;
     }
-    // Se o usuário aceitar durante a navegação, carrega na hora (sem reload)
-    const onAccept = () => loadClarity();
+    const onAccept = () => { loadClarity(); loadPixel(); };
     window.addEventListener("cookie-consent-accepted", onAccept);
     return () => window.removeEventListener("cookie-consent-accepted", onAccept);
   }, []);
