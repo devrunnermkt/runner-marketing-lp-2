@@ -25,7 +25,7 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: `${siteConfig.siteName} | Marketing Médico que Enche a Agenda, sem Risco no CFM`,
+  title: `${siteConfig.siteName} | Marketing Médico`,
   description: siteConfig.siteDescription,
   keywords: [
     "marketing médico",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.siteName }],
   openGraph: {
-    title: `${siteConfig.siteName} | Marketing Médico que Enche a Agenda, sem Risco no CFM`,
+    title: `${siteConfig.siteName} | Marketing Médico`,
     description: siteConfig.siteDescription,
     url: SITE_URL,
     siteName: siteConfig.siteName,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.siteName} | Marketing Médico que Enche a Agenda, sem Risco no CFM`,
+    title: `${siteConfig.siteName} | Marketing Médico`,
     description: siteConfig.siteDescription,
   },
   robots: {

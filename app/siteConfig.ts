@@ -18,8 +18,7 @@ export function buildWhatsapp(mensagem: string = WHATSAPP_MENSAGEM): string {
 export const siteConfig = {
   // ── Identidade ──────────────────────────────────────────
   siteName: "Runner Marketing",
-  siteDescription:
-    "Agência de marketing para médicos e clínicas. Enchemos a sua agenda com os pacientes certos, dentro da Resolução CFM nº 2.336/2023. Diagnóstico gratuito.",
+  siteDescription: "Agência de marketing para médicos e clínicas",
   siteUrl: "https://runnermarketing.com.br",
   openGraphImage: "[OG_IMAGE_URL]",
   logoText: "Runner",
