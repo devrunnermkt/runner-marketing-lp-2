@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import ScrollButton from "@/components/ScrollButton";
 
 export default function Hero() {
   return (
@@ -51,15 +52,15 @@ export default function Hero() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#contato"
+            <ScrollButton
+              targetId="contato"
               data-contato="cta"
               data-local="hero"
               className="btn-contato inline-flex items-center justify-center gap-2 px-7 py-4 bg-teal-500 text-white text-base sm:text-lg font-semibold rounded-xl hover:bg-teal-400 transition-colors shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-ink"
             >
               Quero atrair o paciente ideal
               <ArrowRight size={18} />
-            </a>
+            </ScrollButton>
           </div>
 
           {/* Microcopy */}
