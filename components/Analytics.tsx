@@ -54,14 +54,26 @@ function loadClarity() {
  */
 export default function Analytics() {
   useEffect(() => {
+    const trackLead = (e: MouseEvent) => {
+      const el = (e.target as HTMLElement).closest(".btn-contato");
+      if (!el) return;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const fbq = (window as any).fbq;
+      if (typeof fbq === "function") fbq("track", "Lead");
+    };
+    document.addEventListener("click", trackLead);
+
     if (consentAccepted()) {
       loadClarity();
       loadPixel();
-      return;
+      return () => document.removeEventListener("click", trackLead);
     }
     const onAccept = () => { loadClarity(); loadPixel(); };
     window.addEventListener("cookie-consent-accepted", onAccept);
-    return () => window.removeEventListener("cookie-consent-accepted", onAccept);
+    return () => {
+      document.removeEventListener("click", trackLead);
+      window.removeEventListener("cookie-consent-accepted", onAccept);
+    };
   }, []);
 
   return null;
