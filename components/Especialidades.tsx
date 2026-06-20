@@ -11,6 +11,7 @@ import {
   BarChart3,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   type LucideIcon,
 } from "lucide-react";
 
@@ -76,26 +77,30 @@ const servicos: Servico[] = [
 ];
 
 // Posição de cada card conforme a distância (offset) até o card central.
-function estiloCard(offset: number): React.CSSProperties {
+function estiloCard(offset: number, hovered: boolean): React.CSSProperties {
   const abs = Math.abs(offset);
   const sign = Math.sign(offset);
   const map: Record<number, { tx: number; scale: number; op: number; z: number }> = {
     0: { tx: 0, scale: 1, op: 1, z: 30 },
-    1: { tx: 64, scale: 0.82, op: 0.55, z: 20 },
+    1: { tx: 64, scale: 0.82, op: 0.65, z: 20 },
     2: { tx: 112, scale: 0.66, op: 0.25, z: 10 },
   };
   const p = map[abs] ?? { tx: 150, scale: 0.55, op: 0, z: 0 };
+  const opFinal = hovered && abs === 1 ? 0.88 : p.op;
+  const scaleFinal = hovered && abs === 1 ? p.scale * 1.03 : p.scale;
   return {
-    transform: `translateX(-50%) translateX(${sign * p.tx}%) scale(${p.scale})`,
-    opacity: p.op,
+    transform: `translateX(-50%) translateX(${sign * p.tx}%) scale(${scaleFinal})`,
+    opacity: opFinal,
     zIndex: p.z,
     pointerEvents: abs === 0 ? "auto" : abs <= 2 ? "auto" : "none",
+    transition: "transform 0.5s ease-out, opacity 0.2s ease",
   };
 }
 
 export default function Especialidades() {
   const n = servicos.length;
   const [active, setActive] = useState(0);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   const go = (dir: number) => setActive((a) => (a + dir + n) % n);
 
@@ -142,19 +147,35 @@ export default function Especialidades() {
               const offset = offsetDe(i);
               const Icon = s.icon;
               const isActive = offset === 0;
+              const isSide = Math.abs(offset) === 1;
+              const isHovered = hoveredIdx === i;
               return (
                 <article
                   key={s.titulo}
                   onClick={() => setActive(i)}
-                  style={estiloCard(offset)}
+                  onMouseEnter={() => !isActive && setHoveredIdx(i)}
+                  onMouseLeave={() => setHoveredIdx(null)}
+                  style={estiloCard(offset, isHovered)}
                   className={[
-                    "absolute left-1/2 top-2 w-72 sm:w-80 rounded-3xl bg-white overflow-hidden transition-all duration-500 ease-out",
+                    "absolute left-1/2 top-2 w-72 sm:w-80 rounded-3xl bg-white overflow-hidden",
                     isActive
                       ? "shadow-2xl cursor-default"
                       : "shadow-lg cursor-pointer",
                   ].join(" ")}
                   aria-hidden={!isActive}
                 >
+                  {/* Indicador clicável nos cards laterais */}
+                  {isSide && (
+                    <div
+                      className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none"
+                      style={{ opacity: isHovered ? 1 : 0, transition: "opacity 0.2s ease" }}
+                    >
+                      <span className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600/90 text-white text-xs font-semibold shadow-lg backdrop-blur-sm">
+                        <ChevronUp size={13} className={offset < 0 ? "rotate-[-90deg]" : "rotate-90"} />
+                        Ver
+                      </span>
+                    </div>
+                  )}
                   {/* Topo: imagem do serviço (ou gradiente + ícone como fallback) */}
                   <div className="relative h-40 sm:h-44 bg-gradient-to-br from-teal-400 via-teal-500 to-ink flex items-center justify-center">
                     {s.imagem ? (
