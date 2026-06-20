@@ -86,30 +86,16 @@ export default function ProjetosRunner() {
                     {proj.descricao}
                   </p>
 
-                  {/* Botão: Behance (azul) ou Instagram (gradiente) */}
-                  {isBehance ? (
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-auto self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-semibold bg-[#1769FF] hover:bg-[#0055E4] transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-                    >
-                      <BehanceIcon className="w-4 h-4" />
-                      Ver portfólio
-                      <ArrowUpRight size={14} />
-                    </a>
-                  ) : (
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-auto self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-semibold bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
-                    >
-                      <InstagramIcon className="w-4 h-4" />
-                      Ver portfólio
-                      <ArrowUpRight size={14} />
-                    </a>
-                  )}
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-semibold bg-teal-600 hover:bg-teal-500 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
+                  >
+                    {isBehance ? <BehanceIcon className="w-4 h-4" /> : <InstagramIcon className="w-4 h-4" />}
+                    Ver portfólio
+                    <ArrowUpRight size={14} />
+                  </a>
                 </div>
               </article>
             );
