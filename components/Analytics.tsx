@@ -42,6 +42,7 @@ export default function Analytics() {
     const trackLead = (e: MouseEvent) => {
       const el = (e.target as HTMLElement).closest(".btn-contato");
       if (!el) return;
+      if ((el as HTMLElement).dataset.contato !== "whatsapp") return;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const fbq = (window as any).fbq;
       if (typeof fbq === "function") fbq("track", "Lead");
