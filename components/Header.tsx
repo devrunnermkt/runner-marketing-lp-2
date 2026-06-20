@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Menu, X, ArrowLeft } from "lucide-react";
 
 const navLinks = [
   { label: "Especialidades", scrollId: "especialidades" },
@@ -18,6 +20,8 @@ function scrollTo(id: string) {
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,28 +57,51 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <button
-              type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center group cursor-pointer border-none bg-none p-0"
-              aria-label="Runner Marketing, voltar ao topo"
-            >
-              <Image
-                src="/logo-runner.svg"
-                alt="Runner Marketing"
-                width={220}
-                height={57}
-                priority
-                className="h-11 sm:h-12 w-auto transition-all duration-300"
-                style={{
-                  opacity: isAtTop ? 0.6 : 1,
-                  filter: isAtTop ? 'brightness(1.5) saturate(0.7)' : 'brightness(1)'
-                }}
-              />
-            </button>
+            {isHome ? (
+              <button
+                type="button"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="flex items-center group cursor-pointer border-none bg-transparent p-0"
+                aria-label="Runner Marketing, voltar ao topo"
+              >
+                <Image
+                  src="/logo-runner.svg"
+                  alt="Runner Marketing"
+                  width={220}
+                  height={57}
+                  priority
+                  className="h-11 sm:h-12 w-auto transition-all duration-300"
+                  style={{
+                    opacity: isAtTop ? 0.6 : 1,
+                    filter: isAtTop ? 'brightness(1.5) saturate(0.7)' : 'brightness(1)'
+                  }}
+                />
+              </button>
+            ) : (
+              <Link href="/" aria-label="Voltar à página inicial">
+                <Image
+                  src="/logo-runner.svg"
+                  alt="Runner Marketing"
+                  width={220}
+                  height={57}
+                  priority
+                  className="h-11 sm:h-12 w-auto transition-all duration-300"
+                />
+              </Link>
+            )}
 
             {/* Nav desktop */}
             <nav className="hidden md:flex items-center gap-8">
+              {!isHome && (
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors px-4 py-2 rounded-xl"
+                  style={{ color: isScrolled ? '#1e293b' : 'rgba(255,255,255,0.85)' }}
+                >
+                  <ArrowLeft size={15} />
+                  Página inicial
+                </Link>
+              )}
               {navLinks.map((link) => {
                 const sharedStyle = {
                   color: isScrolled ? '#1e293b' : 'rgba(255, 255, 255, 0.8)',
@@ -160,6 +187,17 @@ export default function Header() {
             }}
           >
             <div className="max-w-7xl mx-auto px-6 sm:px-8 py-4 space-y-2">
+              {!isHome && (
+                <Link
+                  href="/"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-2 text-base font-semibold py-3 px-3 rounded-md"
+                  style={{ color: isScrolled ? '#0d9488' : '#ffffff' }}
+                >
+                  <ArrowLeft size={16} />
+                  Página inicial
+                </Link>
+              )}
               {navLinks.map((link) => {
                 if ("scrollId" in link) {
                   return (
